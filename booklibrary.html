@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 id="header">Book Library</h1>
+<br><b/>
+<section class="container">
+<label>Title</label> <input type="text" id="title" maxlength="26" placeholder="book title"> <br><br>
+<label>author</label> <input type="text" id="author" maxlength="20" placeholder="author name"><br><br>
+<label>Price:</label><input type="text" id="price" maxlength="4" placeholder="Amount"><br><br>
+<br>
+<button type="button" id='btn'>save</button>
+<button type="button" id='getbook'>getbook</button>
+</section>
+<script>
+    const books = [];
+document.getElementById("btn").addEventListener("click", function (){
+    let title = document.getElementById('title').value;
+    let author = document.getElementById('author').value;
+    let price = document.getElementById('price').value;
+    let book = new Book (title,author,price);
+    book.saveBook();
+
+})
+document.getElementById("getbook").addEventListener('click',function () {
+    console.log(Book.getbook())
+})
+
+
+   class Book{
+        constructor(title, author,price,) {
+            this.title = title;
+            this.author = author;
+            this.price =price;
+        }
+        static getbook(){
+            return books;
+        }
+         saveBook(){
+            books.push({
+                name: this.title,
+                author: this.author,
+                price: this.price
+            });
+            console.log('save Book');
+        }
+    }
+</script>
+</body>
+</html>

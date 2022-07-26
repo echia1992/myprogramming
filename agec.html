@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Age Comparism</title>
+</head>
+<body>
+<p>Please Input any Number and very your age check </p>
+<input id="Age" value="">
+
+<Button onclick="myfunction()">Click me</Button>
+<p id="My"></p>
+
+<script>
+    function myfunction() {
+        let age = document.getElementById("Age").value;
+        let votable = (age < 18) ? "You are less less than 18 years" : "you are an adult";
+        document.getElementById("My").innerHTML = votable + " Congratulation you are Good to go";
+    }
+</script>
+</body>
+</html>
